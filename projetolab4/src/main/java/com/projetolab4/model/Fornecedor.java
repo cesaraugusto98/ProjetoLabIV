@@ -1,0 +1,48 @@
+package com.projetolab4.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "FOR_FORNECEDOR")
+public class Fornecedor {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long forId;
+	
+	/*TODO CHAVE ESTRANGEIRA PARA ENDERECO - END_ID*/
+	
+	@Size(max = 16)
+	@Column(name="FOR_CNPJ", nullable = false)
+	private String forCnpj;
+	
+	@Size(max = 12)
+	@Column(name="FOR_CONTATO", nullable = false)
+	private String forContato;
+	
+	@Size(max = 50)
+	@Column(name="FOR_NOME_FANTASIA", nullable = false)
+	private String forNomeFantasia;
+	
+	/*TODO METODO TO STRING CONSIDERANDO A CHAVE ESTRANGEIRA*/
+	
+	
+	
+	
+	
+
+}
