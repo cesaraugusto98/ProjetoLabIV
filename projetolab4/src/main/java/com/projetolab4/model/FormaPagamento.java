@@ -33,7 +33,7 @@ public class FormaPagamento {
 	
 	@Override
 	public String toString() {
-		return String.format("FormaPagamento[id=%d, fpgFormaPagamento='%s', fpgDescontoPagamento='%d']", getFpgId(), getFpgFormaPagamento(), getFpgDescontPagamento());
+		return String.format("FormaPagamento[id=%d, fpgFormaPagamento='%s', fpgDescontoPagamento='%d']", getFpgId(), getFpgFormaPagamento(), getFpgDescontoPagamento());
 	}
 
 }

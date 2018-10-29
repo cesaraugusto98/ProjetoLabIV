@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -35,10 +36,18 @@ public class Produto {
 	private Double proCusto;
 	
 	/*TODO CHAVE ESTRANGEIRA PARA CATEGORIA - CAT_ID*/
+	@JoinColumn(name = "cat_id", unique = true, referencedColumnName = "catId", nullable = false)
+	private long cat_id;
+	
 	
 	/*TODO CHAVE ESTRANGEIRA PARA ESTOQUE - EST_ID*/
+	@JoinColumn(name = "est_id", unique = true, referencedColumnName = "estId", nullable = false)
+	private long est_id;
 	
 	/*TODO METODO TOSTRING CONSIDERANDO A CHAVE ESTRANGEIRA*/
+	public String toString(long valor) {
+		return Long.toString(valor);
+	    }
 	
 
 }
