@@ -22,3 +22,7 @@ gitk
 # Comandos Liquibase
 
 # Comandos Maven
+
+# Referencias
+
+https://pt.stackoverflow.com/questions/234755/diferen%C3%A7as-onetomany-manytomany-manytoone-onetoone
