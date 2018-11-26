@@ -1,11 +1,6 @@
 package com.projetolab4.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
@@ -24,7 +19,7 @@ public class Endereco {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long endId;
-	
+
 	@Size(max = 8)
 	@Column(name="END_CEP", nullable = false)
 	private String endCep;
@@ -32,7 +27,8 @@ public class Endereco {
 	@Size(max = 50)
 	@Column(name="END_COMPLEMENTO", nullable = false)
 	private String endComplemento;
-	
+
+
 	@Override
 	public String toString() {
 		return String.format("Endereco[id=%d, endCep='%s', endComplemento='%s']", getEndId(), getEndCep(), getEndComplemento());

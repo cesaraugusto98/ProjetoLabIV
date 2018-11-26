@@ -35,5 +35,4 @@ public class FormaPagamento {
 	public String toString() {
 		return String.format("FormaPagamento[id=%d, fpgFormaPagamento='%s', fpgDescontoPagamento='%d']", getFpgId(), getFpgFormaPagamento(), getFpgDescontoPagamento());
 	}
-
 }

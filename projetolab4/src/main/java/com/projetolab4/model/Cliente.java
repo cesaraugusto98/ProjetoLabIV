@@ -1,11 +1,6 @@
 package com.projetolab4.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
@@ -31,21 +26,12 @@ public class Cliente {
 	@Size(max = 20)
 	@Column(name="CLI_CPF", nullable = false)
 	private String cliCpf;
-	
-	@Size(max = 30)
-	@Column(name="CLI_LOGIN", nullable = false)
-	private String cliLogin;
-	
-	@Size(max = 12)
-	@Column(name="CLI_SENHA", nullable = false)
-	private String cliSenha;
-	
-	/*TODO CHAVE ESTRANGEIRA PARA ENDERECO*/
-	
+
+	@OneToOne
+	@Column(name = "END_ID")
+	private Endereco endId;
+
 	@Size(max = 12)
 	@Column(name="CLI_CONTATO", nullable = false)
 	private String cliContato;
-	
-	/*TODO METODO TO STRING COM O ENDERECO CONFIGURADO*/
-
 }

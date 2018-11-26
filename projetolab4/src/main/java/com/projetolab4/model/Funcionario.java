@@ -1,11 +1,6 @@
 package com.projetolab4.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
@@ -39,8 +34,10 @@ public class Funcionario {
 	@Size(max = 12)
 	@Column(name="FUN_SENHA", nullable = false)
 	private String funSenha;
-	
-	/*TODO CHAVE ESTRANGEIRA PARA ENDERECO END_ID*/
+
+	@OneToOne
+	@Column(name = "END_ID")
+	private Endereco endId;
 	
 	@Size(max = 12)
 	@Column(name="FUN_CONTATO", nullable = false)
@@ -52,8 +49,4 @@ public class Funcionario {
 	@Size(max = 40)
 	@Column(name="FUN_CARGO", nullable = false)
 	private String funCargo;
-	
-	/*TODO METODO TOSTRING CONSIDERANDO A CHAVE ESTRANGEIRA DE ENDERECO*/
-	
-
 }

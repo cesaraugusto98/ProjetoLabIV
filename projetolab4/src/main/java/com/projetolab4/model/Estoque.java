@@ -21,11 +21,8 @@ import lombok.NoArgsConstructor;
 public class Estoque {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long estID;
+	private Long estId;
 	
 	@Column(name="EST_QTD", nullable = false)
 	private Long estQtd;
-	
-	/*TODO METODO TO STRING CONSIDERANDO A CHAVE ESTRANGEIRA*/
-
 }
