@@ -28,7 +28,6 @@ public class Endereco {
 	@Column(name="END_COMPLEMENTO", nullable = false)
 	private String endComplemento;
 
-
 	@Override
 	public String toString() {
 		return String.format("Endereco[id=%d, endCep='%s', endComplemento='%s']", getEndId(), getEndCep(), getEndComplemento());

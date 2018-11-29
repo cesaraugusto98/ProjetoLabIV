@@ -20,22 +20,23 @@ public class Venda {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long venId;
 
-	@OneToOne
-	@Column(name = "CLI_ID")
+	@ManyToOne
+	@JoinColumn(name = "CLI_ID", nullable = false)
 	private Cliente cliId;
 
-	@OneToOne
-	@Column(name = "PRO_ID")
+	@ManyToOne
+	@JoinColumn(name = "PRO_ID", nullable = false)
 	private Produto proId;
 
 	@Column(name = "VEN_PRO_ID")
 	private Integer vendProQtd;
 
-	@Column(name = "FPG_ID")
+	@ManyToOne
+	@JoinColumn(name = "FPG_ID", nullable = false)
 	private long fpgId;
 
-	@OneToOne
-	@Column(name = "FUN_ID")
+	@ManyToOne
+	@JoinColumn(name = "FUN_ID", nullable = false)
 	private Funcionario funId;
 
 	@Column(name = "VEN_DATA")

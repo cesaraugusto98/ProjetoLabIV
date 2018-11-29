@@ -25,4 +25,7 @@ public class Estoque {
 	
 	@Column(name="EST_QTD", nullable = false)
 	private Long estQtd;
+
+	@Column(name = "EST_LOCALIZACAO", nullable = false)
+	private String estLocalizacao;
 }

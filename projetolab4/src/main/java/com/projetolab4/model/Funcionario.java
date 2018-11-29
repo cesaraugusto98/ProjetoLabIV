@@ -35,8 +35,8 @@ public class Funcionario {
 	@Column(name="FUN_SENHA", nullable = false)
 	private String funSenha;
 
-	@OneToOne
-	@Column(name = "END_ID")
+	@ManyToOne
+	@JoinColumn(name = "END_ID", nullable = false)
 	private Endereco endId;
 	
 	@Size(max = 12)

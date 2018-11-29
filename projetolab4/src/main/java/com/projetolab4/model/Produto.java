@@ -30,14 +30,14 @@ public class Produto {
 	private Double proCusto;
 
 	@ManyToOne
-	@Column(name = "FOR_ID", nullable = false)
+	@JoinColumn(name = "FOR_ID", nullable = false)
 	private Fornecedor forId;
 
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "CAT_ID", nullable = false)
 	private Categoria catId;
 
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "EST_ID", nullable = false)
 	private Estoque estId;
 }

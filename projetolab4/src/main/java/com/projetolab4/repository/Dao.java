@@ -1,4 +1,4 @@
-package com.projetolab4.dao;
+package com.projetolab4.repository;
 
 import java.util.List;
 

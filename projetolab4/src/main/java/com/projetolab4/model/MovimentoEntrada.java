@@ -22,12 +22,12 @@ public class MovimentoEntrada {
     @Column(name = "MET_ID", nullable = false)
     private Long metId;
 
-    @OneToOne
-    @Column(name = "FOR_ID")
+    @ManyToOne
+    @JoinColumn(name = "FOR_ID", nullable = false)
     private Fornecedor forId;
 
-    @OneToMany
-    @Column(name = "PRO_ID")
+    @ManyToOne
+    @JoinColumn(name = "PRO_ID", nullable = false)
     private Produto prodId;
 
     @Column(name = "MES_QTD")
