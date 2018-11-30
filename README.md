@@ -25,4 +25,14 @@ gitk
 
 # Referencias
 
+###
 https://pt.stackoverflow.com/questions/234755/diferen%C3%A7as-onetomany-manytomany-manytoone-onetoone
+
+### Liquibase Doc
+https://www.liquibase.org/
+
+### Overview Liquibase
+https://www.baeldung.com/liquibase-refactor-schema-of-java-app
+
+### Maven Doc
+https://maven.apache.org/
