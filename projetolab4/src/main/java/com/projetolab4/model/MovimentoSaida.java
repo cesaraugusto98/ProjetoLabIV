@@ -8,7 +8,7 @@ public class MovimentoSaida {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long mesId;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "VEN_ID", nullable = false)
     private Venda venId;
 

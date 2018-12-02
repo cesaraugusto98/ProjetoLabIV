@@ -19,7 +19,6 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long catId;
 
-	@ManyToOne
 	@Size(max = 30)
 	@Column(name="CAT_NOME", nullable = false)
 	private String catNome;

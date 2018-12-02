@@ -33,11 +33,11 @@ public class Produto {
 	@JoinColumn(name = "FOR_ID", nullable = false)
 	private Fornecedor forId;
 
-	@ManyToOne
+	@ManyToOne /* Muitos produtos por categoria */
 	@JoinColumn(name = "CAT_ID", nullable = false)
 	private Categoria catId;
 
-	@OneToMany
+	@ManyToOne /* Muitos produtos pra um estoque */
 	@JoinColumn(name = "EST_ID", nullable = false)
 	private Estoque estId;
 }
