@@ -29,7 +29,7 @@ public class Produto {
 	@Column(name = "PRO_CUSTO", nullable = false)
 	private Double proCusto;
 
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "FOR_ID", nullable = false)
 	private Fornecedor forId;
 
@@ -37,7 +37,7 @@ public class Produto {
 	@JoinColumn(name = "CAT_ID", nullable = false)
 	private Categoria catId;
 
-	@ManyToOne
+	@OneToMany
 	@JoinColumn(name = "EST_ID", nullable = false)
 	private Estoque estId;
 }
