@@ -1,11 +1,13 @@
 package com.projetolab4.repository;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 public interface Dao<E, I> {
-	void save(E entity);
+	E save(E entity);
 	
-	E get(I id);
+	E findById(I id);
 	
 	void delete(I id);
 	
