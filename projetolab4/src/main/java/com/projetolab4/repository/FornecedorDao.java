@@ -37,7 +37,7 @@ public class FornecedorDao implements Dao<Fornecedor, Long> {
     @Override
     public void delete(Long id) {
         EntityManager em = emf.createEntityManager();
-        Funcionario entity = em.find(Funcionario.class, id);
+        Fornecedor entity = em.find(Fornecedor.class, id);
         em.getTransaction().begin();
         em.remove(entity);
         em.getTransaction().commit();
