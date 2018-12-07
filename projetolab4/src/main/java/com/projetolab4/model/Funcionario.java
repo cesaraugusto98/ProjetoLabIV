@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -35,7 +37,7 @@ public class Funcionario {
 	@Column(name="FUN_SENHA", nullable = false)
 	private String funSenha;
 
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "END_ID", nullable = false)
 	private Endereco endId;
 	
@@ -49,4 +51,7 @@ public class Funcionario {
 	@Size(max = 40)
 	@Column(name="FUN_CARGO", nullable = false)
 	private String funCargo;
+
+	@OneToMany(mappedBy = "funId", fetch = FetchType.LAZY)
+	private List<Venda> vendas;
 }

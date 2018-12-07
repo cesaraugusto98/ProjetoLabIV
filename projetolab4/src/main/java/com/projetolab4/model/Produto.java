@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -40,4 +42,8 @@ public class Produto {
 	@ManyToOne /* Muitos produtos pra um estoque */
 	@JoinColumn(name = "EST_ID", nullable = false)
 	private Estoque estId;
+
+	@OneToMany(mappedBy = "itvId", fetch = FetchType.LAZY)
+    @JoinColumn(name = "itvId", nullable = false)
+	private List<ItemVenda> itemVenda;
 }

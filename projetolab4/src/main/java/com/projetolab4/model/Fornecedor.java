@@ -19,7 +19,7 @@ public class Fornecedor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long forId;
 
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "END_ID", nullable = false)
 	private Endereco endId;
 	

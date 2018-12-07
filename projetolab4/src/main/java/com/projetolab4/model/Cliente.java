@@ -27,11 +27,13 @@ public class Cliente {
 	@Column(name="CLI_CPF", nullable = false)
 	private String cliCpf;
 
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "END_ID", nullable = false)
 	private Endereco endId;
 
 	@Size(max = 12)
 	@Column(name="CLI_CONTATO", nullable = false)
 	private String cliContato;
+
+
 }
