@@ -24,6 +24,7 @@
         <comment>Criação do banco de dados e usuarios</comment>
         <sqlFile path="src/main/resources/dbschema/scripts/scriptInitialSQL.sql"
         splitStatements="true" stripComments="true"/>
+        <rollback/>
     </changeSet>
 
 	<changeSet id="2" author="usuario">
