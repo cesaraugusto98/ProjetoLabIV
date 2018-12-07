@@ -1,27 +1,43 @@
 # ProjetoLabIV
-Projeto de Ecommerce, criado usando Java, MySQL, Maven, Liquibase, etc.
+Projeto de Ecommerce, criado usando Java, MySQL, Maven, Liquibase, Sprint Boot.
 
 # Integrantes
-Cesar Augusto Siqueira Santos
-Gustavo Soares
-Jonathan Souza
-Kevin Mikio
-Lucas Domingos
+Cesar Augusto Siqueira Santos @cesaraugusto98
+Gustavo Soares @gsoare2
+Jonathan Souza @joohnnathans
+Kevin Mikio @kevin799
+Lucas Domingos @lucasdlg5
+Carlos Eduardo dos Santos @EduCarlos0311
 
 # Comandos Git
 git clone https://github.com/cesaraugusto98/ProjetoLabIV.git
 
-git checkout
+git checkout origin/release01
 
-git checkout release01
+git checkout origin/DEV_BRANCH
 
 git status
 
-gitk
+git reset
+
 
 # Comandos Liquibase
 
+mvn liquibase:update
+
+mvn liquibase:status
+
+mvn liquibase:dropAll
+
 # Comandos Maven
+
+mvn clean
+
+mvn install
+
+# Comando Spring Boot
+
+mvn spring-boot:run
 
 # Referencias
 
