@@ -29,32 +29,44 @@ public class ClienteDao implements Dao<Cliente, Long> {
 	
 	
 	@Override
-	public void delete(Long id) {
+	public long delete(Long id) {
 		EntityManager em = emf.createEntityManager();
 		Cliente entity = em.find(Cliente.class, id);
 		em.getTransaction().begin();
         em.remove(entity);
-        em.getTransaction().commit();
-        em.close();
-		
-        
-        System.out.println("Removed cliente.");
+       try {
+    	   em.getTransaction().commit();
+           em.close();
+   		   System.out.println("Removed cliente.");
+           return 1;
+	} catch (Exception e) {
+		System.out.println("Removed cliente.");
+		return 0;
+	}
 	
 	
 
 }
 	
 	@Override
-	public void update(Cliente cliente) {
+	public long update(Cliente cliente) {
 		 EntityManager em = emf.createEntityManager();
 	        Cliente entity = em.find(Cliente.class, cliente.getCliId());
 	        em.getTransaction().begin();
 	        entity.setCliContato(cliente.getCliContato());
 	        entity.setCliCpf(cliente.getCliCpf());
 	        entity.setCliNome(cliente.getCliNome());
-	        em.getTransaction().commit();
-	        em.close();
-	        System.out.println("Updated");
+	        
+	        try {
+	        	em.getTransaction().commit();
+		        em.close();
+		        System.out.println("Updated");
+		        return 1;
+			} catch (Exception e) {
+				System.out.println(e);
+				return 0;
+			}
+	        
 	}
 	
 	@Override

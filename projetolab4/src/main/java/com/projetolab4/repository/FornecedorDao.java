@@ -35,7 +35,7 @@ public class FornecedorDao implements Dao<Fornecedor, Long> {
     }
 
     @Override
-    public void delete(Long id) {
+    public long delete(Long id) {
         EntityManager em = emf.createEntityManager();
         Fornecedor entity = em.find(Fornecedor.class, id);
         em.getTransaction().begin();
@@ -44,10 +44,12 @@ public class FornecedorDao implements Dao<Fornecedor, Long> {
         em.close();
 
         System.out.println("Removed fornecedor.");
+        
+        return 1;
     }
 
     @Override
-    public void update(Fornecedor fornecedor) {
+    public long update(Fornecedor fornecedor) {
         EntityManager em = emf.createEntityManager();
         Fornecedor entity = em.find(Fornecedor.class, fornecedor.getForId());
         em.getTransaction().begin();
@@ -56,10 +58,21 @@ public class FornecedorDao implements Dao<Fornecedor, Long> {
         entity.setForContato(fornecedor.getForContato());
         entity.setForCnpj(fornecedor.getForCnpj());
 
-        em.getTransaction().commit();
-        em.close();
+        
+        try {
+        	em.getTransaction().commit();
+        	System.out.println("Updated");
+        	em.close();
+        	return 1;
+		} catch (Exception e) {
+			System.out.println(e);
+			return 2;
+			
+		}
+        
 
-        System.out.println("Updated");
+        
+        
     }
 
     @Override

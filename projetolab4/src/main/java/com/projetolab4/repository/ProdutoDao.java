@@ -32,20 +32,25 @@ public class ProdutoDao implements Dao<Produto, Long>{
 	}
 
 	@Override
-	public void delete(Long id) {
+	public long delete(Long id) {
 		EntityManager em = emf.createEntityManager();
         Produto entity = em.find(Produto.class, id);
         em.getTransaction().begin();
         em.remove(entity);
-        em.getTransaction().commit();
-        em.close();
-
-        System.out.println("Removed produto.");
+        try {
+        	em.getTransaction().commit();
+            em.close();
+            System.out.println("Removed produto.");
+            return 1;
+		} catch (Exception e) {
+			System.out.println(e);
+			return 0;
+		}
 		
 	}
 
 	@Override
-	public void update(Produto produto) {
+	public long update(Produto produto) {
 		EntityManager em = emf.createEntityManager();
         Produto entity = em.find(Produto.class, produto.getForId());
         em.getTransaction().begin();
@@ -54,10 +59,15 @@ public class ProdutoDao implements Dao<Produto, Long>{
         entity.setProNome(produto.getProNome());
         entity.setProPreco(produto.getProPreco());
         
-        em.getTransaction().commit();
-        em.close();
-
-        System.out.println("Updated");
+        try {
+        	em.getTransaction().commit();
+            em.close();
+            System.out.println("Updated");
+            return 1;
+		} catch (Exception e) {
+			System.out.println(e);
+			return 0;
+		}
         
         
 

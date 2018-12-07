@@ -35,7 +35,7 @@
         	<dropTable tableName="FPG_FORMA_PAGAMENTO"/>
         	<dropTable tableName="VEN_VENDA"/>
         	<dropTable tableName="FUN_FUNCIONARIO"/>
-        	<drotable tableName="ITV_ITEM_VENDA"/>
+        	<dropTable tableName="ITV_ITEM_VENDA"/>
         </rollback>
     </changeSet>
     

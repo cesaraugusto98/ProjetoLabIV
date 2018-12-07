@@ -39,7 +39,7 @@ public class FuncionarioDao implements Dao<Funcionario, Long>{
 		return entity;
 	}
 	@Override
-	public void delete(Long id) {
+	public long delete(Long id) {
 		 EntityManager em = emf.createEntityManager();
 	        Funcionario entity = em.find(Funcionario.class, id);
 	        em.getTransaction().begin();
@@ -48,11 +48,13 @@ public class FuncionarioDao implements Dao<Funcionario, Long>{
 	        em.close();
 
 	        System.out.println("Removed funcioanrio.");
+	        
+	        return 1;
 	    }
 	
 	
 	@Override
-	public void update(Funcionario funcionario) {
+	public long update(Funcionario funcionario) {
         EntityManager em = emf.createEntityManager();
         Funcionario entity = em.find(Funcionario.class, funcionario.getEndId());
         em.getTransaction().begin();
@@ -64,10 +66,17 @@ public class FuncionarioDao implements Dao<Funcionario, Long>{
         entity.setFunNome(funcionario.getFunNome());
         entity.setFunSalario(funcionario.getFunSalario());
         entity.setFunSenha(funcionario.getFunSenha());
-        em.getTransaction().commit();
-        em.close();
-
-        System.out.println("Updated");
+       
+        
+        try {
+        	 em.getTransaction().commit();
+             em.close();
+             System.out.println("Updated");
+             return 1;
+		} catch (Exception e) {
+			System.out.println(e);
+			return 0;
+		}
 		
 	
 	
