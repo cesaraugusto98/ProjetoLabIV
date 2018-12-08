@@ -22,7 +22,8 @@ public class Fornecedor {
 	@GenericGenerator(name = "native", strategy="native")
 	private Long forId;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "END_ID")
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	private Endereco endereco;
 	
 	@Size(max = 16)
