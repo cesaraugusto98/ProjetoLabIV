@@ -43,7 +43,7 @@ public class Produto {
 	@JoinColumn(name = "EST_ID", nullable = false)
 	private Estoque estId;
 
-	@OneToMany(mappedBy = "itvId", fetch = FetchType.LAZY)
-    @JoinColumn(name = "itvId", nullable = false)
+	@OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
+    //@JoinColumn(name = "ITV_ID")
 	private List<ItemVenda> itemVenda;
 }

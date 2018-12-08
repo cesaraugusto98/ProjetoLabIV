@@ -29,8 +29,8 @@ public class Venda {
 	@JoinColumn(name = "PRO_ID", nullable = false)
 	private Produto proId;
 
-	@OneToMany(mappedBy = "itvId", fetch = FetchType.LAZY)
-	@JoinColumn(name = "itvId", nullable = false)
+	@OneToMany(mappedBy = "venda", fetch = FetchType.LAZY)
+	//@JoinColumn(name = "ITV_ID", nullable = false)
 	private List<ItemVenda> itemVenda;
 
 	@OneToOne

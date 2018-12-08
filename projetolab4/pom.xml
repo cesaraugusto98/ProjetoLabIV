@@ -73,7 +73,7 @@
 				<version>${liquibase.version}</version>
 				<configuration>
 					<propertyFileWillOverride>true</propertyFileWillOverride>
-					<propertyFile>src/main/resources/application.properties</propertyFile>
+					<propertyFile>src/main/resources/liquibase.properties</propertyFile>
 				</configuration>
 			</plugin>
 			

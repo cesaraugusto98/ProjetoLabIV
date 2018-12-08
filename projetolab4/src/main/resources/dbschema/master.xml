@@ -20,14 +20,13 @@
 	<include file="src/main/resources/dbschema/scripts/scriptInsercaoFUN_FUNCIONARIO.sql" />
 	<include file="src/main/resources/dbschema/scripts/scriptInsercaoPRO_PRODUTO.sql" />
 
-	<changeSet id="1" author="usuario1">
+	<changeSet id="1" author="usuario">
         <comment>Criação do banco de dados e usuarios</comment>
         <sqlFile path="src/main/resources/dbschema/scripts/scriptInitialSQL.sql"
         splitStatements="true" stripComments="true"/>
-        <rollback/>
     </changeSet>
 
-	<changeSet id="2" author="usuario">
+	<changeSet id="2" author="usuario1">
         <comment>Criacao das tabela </comment>
         <sqlFile path="src/main/resources/dbschema/scripts/scriptCriacaoTabelas.sql"
         splitStatements="true" stripComments="true"/>

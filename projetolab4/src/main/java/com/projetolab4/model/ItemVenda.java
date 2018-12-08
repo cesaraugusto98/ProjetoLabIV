@@ -20,9 +20,11 @@ public class ItemVenda {
     private Long itvId;
 
     @ManyToOne
+    @JoinColumn(name = "PRO_ID", nullable = false)
     private Produto proId;
 
     @ManyToOne
+    @JoinColumn(name = "VEN_ID ", nullable = false)
     private Venda venId;
 
     @Column(name = "QTD_PRO")
