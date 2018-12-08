@@ -24,7 +24,7 @@ public class FornecedorRepository implements JpaRepository<Fornecedor, Long> {
     public <S extends Fornecedor> S save(S s) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        if (s != null && s.getForId() == null && s.getEndereco() != null) {
+        if (s != null && s.getForId() == null) {
             em.persist(s);
             em.getTransaction().commit();
             em.close();

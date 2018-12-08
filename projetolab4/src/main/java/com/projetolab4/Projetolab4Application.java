@@ -32,11 +32,11 @@ public class Projetolab4Application implements CommandLineRunner {
 
 		logger.info("Endereco: id 1 -> {}", repository.findById(1L));
 
-		//logger.info("Endereco persist: {}", repository.save(new Endereco(null, "123", "dshauhf")));
+		logger.info("Endereco persist: {}", repository.save(new Endereco(null, "123", "dshauhf")));
 
 		Endereco end = repository.save(new Endereco(null, "123", "dshauhf"));
 
-		logger.info("Address: -> {}", repository.getOne(end.getEndId()));
+		//logger.info("Address: -> {}", repository.getOne(end.getEndId()));
 
 		logger.info("Fornecedor persist: {}", repository2.save(new Fornecedor(null, end,
 				"123", "(12)89898989", "Carrega macaco LTDA")));
