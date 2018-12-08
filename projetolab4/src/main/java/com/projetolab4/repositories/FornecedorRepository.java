@@ -1,4 +1,4 @@
-package com.projetolab4.repository;
+package com.projetolab4.repositories;
 
 import com.projetolab4.model.Fornecedor;
 import org.springframework.data.domain.Example;

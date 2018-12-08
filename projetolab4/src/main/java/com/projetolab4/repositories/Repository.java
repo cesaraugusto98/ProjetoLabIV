@@ -1,10 +1,8 @@
-package com.projetolab4.repository;
-
-import org.springframework.stereotype.Repository;
+package com.projetolab4.repositories;
 
 import java.util.List;
 
-public interface Dao<E, I> {
+public interface Repository<E, I> {
 	I save(E entity);
 	
 	E findById(I id);

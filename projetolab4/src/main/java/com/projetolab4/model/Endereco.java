@@ -29,8 +29,4 @@ public class Endereco {
 	@Size(max = 50)
 	@Column(name="END_COMPLEMENTO", nullable = false)
 	private String endComplemento;
-
-	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "FOR_ID")
-	private Fornecedor fornecedor;
 }
