@@ -19,12 +19,12 @@ public class ClienteDao implements Dao<Cliente, Long> {
 	
 	
 	@Override
-	public Cliente save(Cliente cliente) {
+	public Long save(Cliente cliente) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(cliente);
 		
-		return cliente;
+		return cliente.getCliId();
 	}
 	
 	

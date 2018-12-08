@@ -13,12 +13,12 @@ public class ProdutoDao implements Dao<Produto, Long>{
 	private EntityManagerFactory emf;
 
 	@Override
-	public Produto save(Produto produto) {
+	public Long save(Produto produto) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(produto);
 		
-		return produto;
+		return produto.getProId();
 	}
 
 	@Override

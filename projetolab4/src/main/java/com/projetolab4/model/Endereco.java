@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 @Data
 @Builder
@@ -15,9 +16,10 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "END_ENDERECO")
 public class Endereco {
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="native")
+	@GenericGenerator(name = "native", strategy="native")
 	private Long endId;
 
 	@Size(max = 8)
@@ -28,9 +30,7 @@ public class Endereco {
 	@Column(name="END_COMPLEMENTO", nullable = false)
 	private String endComplemento;
 
-	@Override
-	public String toString() {
-		return String.format("Endereco[id=%d, endCep='%s', endComplemento='%s']", getEndId(), getEndCep(), getEndComplemento());
-	}	
-
+	//@OneToOne(fetch = FetchType.EAGER)
+	//@JoinColumn(name = "FOR_ID")
+	//private Fornecedor fornecedor;
 }

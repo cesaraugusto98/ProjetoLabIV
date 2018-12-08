@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 public interface Dao<E, I> {
-	E save(E entity);
+	I save(E entity);
 	
 	E findById(I id);
 	

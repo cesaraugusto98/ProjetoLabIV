@@ -16,7 +16,7 @@ public class FuncionarioController {
     }
 
     @PostMapping("/funcioanrio")
-    Funcionario newFuncionario(@RequestBody Funcionario newFuncionario) {
+    Long newFuncionario(@RequestBody Funcionario newFuncionario) {
         return repository.save(newFuncionario);
     }
 

@@ -15,14 +15,14 @@ public class FornecedorDao implements Dao<Fornecedor, Long> {
     private EntityManagerFactory emf;
 
     @Override
-    public Fornecedor save(Fornecedor fornecedor) {
+    public Long save(Fornecedor fornecedor) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         em.persist(fornecedor);
         em.getTransaction().commit();
         em.close();
 
-        return fornecedor;
+        return fornecedor.getForId();
     }
 
     @Override

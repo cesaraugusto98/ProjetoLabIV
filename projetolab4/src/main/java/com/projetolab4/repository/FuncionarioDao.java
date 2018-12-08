@@ -18,14 +18,14 @@ public class FuncionarioDao implements Dao<Funcionario, Long>{
 	
 	
 	@Override
-	public Funcionario save(Funcionario funcionario) {
+	public Long save(Funcionario funcionario) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(funcionario);
 		em.getTransaction().commit();
 		em.close();
 		
-		return funcionario;
+		return funcionario.getFunId();
 		
 	}
 	

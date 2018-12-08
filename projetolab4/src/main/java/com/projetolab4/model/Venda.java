@@ -21,21 +21,17 @@ public class Venda {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long venId;
 
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "CLI_ID", nullable = false)
-	private List<Cliente> cliId;
+	private Cliente cliId;
 
 	@OneToOne
 	@JoinColumn(name = "PRO_ID", nullable = false)
 	private Produto proId;
 
-	@OneToMany(mappedBy = "venda", fetch = FetchType.LAZY)
-	//@JoinColumn(name = "ITV_ID", nullable = false)
-	private List<ItemVenda> itemVenda;
-
 	@OneToOne
 	@JoinColumn(name = "FPG_ID", nullable = false)
-	private long fpgId;
+	private FormaPagamento fpgId;
 
 	@ManyToOne /* Muitas vendas por funcionario */
 	@JoinColumn(name = "FUN_ID", nullable = false)
