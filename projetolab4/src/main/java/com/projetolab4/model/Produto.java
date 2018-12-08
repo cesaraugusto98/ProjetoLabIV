@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 
 import java.util.List;
 
@@ -43,7 +44,4 @@ public class Produto {
 	@JoinColumn(name = "EST_ID", nullable = false)
 	private Estoque estId;
 
-	@OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
-    //@JoinColumn(name = "ITV_ID")
-	private List<ItemVenda> itemVenda;
 }

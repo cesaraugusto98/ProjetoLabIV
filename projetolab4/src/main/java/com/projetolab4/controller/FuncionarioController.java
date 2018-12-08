@@ -4,7 +4,6 @@ package com.projetolab4.controller;
 import org.springframework.web.bind.annotation.*;
 
 import com.projetolab4.model.Funcionario;
-import com.projetolab4.repository.FuncionarioDao;
 
 @RestController
 public class FuncionarioController {
@@ -16,7 +15,7 @@ public class FuncionarioController {
     }
 
     @PostMapping("/funcioanrio")
-    Funcionario newFuncionario(@RequestBody Funcionario newFuncionario) {
+    Long newFuncionario(@RequestBody Funcionario newFuncionario) {
         return repository.save(newFuncionario);
     }
 

@@ -9,8 +9,8 @@
 	<preConditions>
 		<dbms type="mysql" />
 	</preConditions>
-	<include file="src/main/resources/dbschema/scripts/scriptInitialSQL.sql"/>
-	<include file="src/main/resources/dbschema/scripts/scriptCriacaoTabelas.sql" />
+	<!--<include file="src/main/resources/dbschema/scripts/scriptInitialSQL.sql"/>-->
+	<!--<include file="src/main/resources/dbschema/scripts/scriptCriacaoTabelas.sql" />
 	<include file="src/main/resources/dbschema/scripts/scriptInsercaoCAT_CATEGORIA.sql" />
 	<include file="src/main/resources/dbschema/scripts/scriptInsercaoCLI_CLIENTE.sql" />
 	<include file="src/main/resources/dbschema/scripts/scriptInsercaoEND_ENDERECO.sql" />
@@ -18,30 +18,24 @@
 	<include file="src/main/resources/dbschema/scripts/scriptInsercaoFOR_FORNECEDOR.sql" />
 	<include file="src/main/resources/dbschema/scripts/scriptInsercaoFPG_FORMA_PAGAMENTO.sql" />
 	<include file="src/main/resources/dbschema/scripts/scriptInsercaoFUN_FUNCIONARIO.sql" />
-	<include file="src/main/resources/dbschema/scripts/scriptInsercaoPRO_PRODUTO.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoPRO_PRODUTO.sql" />-->
 
-	<changeSet id="1" author="usuario">
-        <comment>Criação do banco de dados e usuarios</comment>
-        <sqlFile path="src/main/resources/dbschema/scripts/scriptInitialSQL.sql"
-        splitStatements="true" stripComments="true"/>
-    </changeSet>
-
-	<changeSet id="2" author="usuario1">
+    <changeSet id="2" author="usuario1">
         <comment>Criacao das tabela </comment>
         <sqlFile path="src/main/resources/dbschema/scripts/scriptCriacaoTabelas.sql"
-        splitStatements="true" stripComments="true"/>
+                 splitStatements="true" stripComments="true"/>
         <rollback>
-        	<dropTable tableName="END_ENDERECO"/>
-        	<dropTable tableName="CLI_CLIENTE"/>
-        	<dropTable tableName="CAT_CATEGORIA"/>
-        	<dropTable tableName="PRO_PRODUTO"/>
-        	<dropTable tableName="EST_ESTOQUE"/>
-        	<dropTable tableName="FOR_FORNECEDOR"/>
-        	<dropTable tableName="CRN_CARRINHO"/>
-        	<dropTable tableName="FPG_FORMA_PAGAMENTO"/>
-        	<dropTable tableName="VEN_VENDA"/>
-        	<dropTable tableName="FUN_FUNCIONARIO"/>
-        	<dropTable tableName="ITV_ITEM_VENDA"/>
+            <dropTable tableName="END_ENDERECO"/>
+            <dropTable tableName="CLI_CLIENTE"/>
+            <dropTable tableName="CAT_CATEGORIA"/>
+            <dropTable tableName="PRO_PRODUTO"/>
+            <dropTable tableName="EST_ESTOQUE"/>
+            <dropTable tableName="FOR_FORNECEDOR"/>
+            <dropTable tableName="CRN_CARRINHO"/>
+            <dropTable tableName="FPG_FORMA_PAGAMENTO"/>
+            <dropTable tableName="VEN_VENDA"/>
+            <dropTable tableName="FUN_FUNCIONARIO"/>
+            <dropTable tableName="ITV_ITEM_VENDA"/>
         </rollback>
     </changeSet>
     

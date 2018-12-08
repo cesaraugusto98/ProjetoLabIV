@@ -4,21 +4,17 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 //import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import com.projetolab4.model.Fornecedor;
-import com.projetolab4.repository.FornecedorDao;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class Projetolab4ApplicationTests {
 	
 	
-	FornecedorDao fornecedorDao;
-	Fornecedor fornecedor;
+	//FornecedorDao fornecedorDao;
+	//Fornecedor fornecedor;
 	
 
 //	@Test
@@ -33,22 +29,22 @@ public class Projetolab4ApplicationTests {
 //		
 //	}
 	
-	@Test
-	public void DeleteFornecedor() {
-		assertEquals(1,fornecedorDao.delete((long) 0));
-	}
+	//@Test
+	//public void DeleteFornecedor() {
+		//assertEquals(1,fornecedorDao.delete((long) 0));
+	//}
 	
-	@Test
-	public void UpdateFornecedor() {
-		assertEquals(1, fornecedorDao.update(fornecedor));
-		
-	}
+	//@Test
+	//public void UpdateFornecedor() {
+	//	assertEquals(1, fornecedorDao.update(fornecedor));
+	//
+	//}
 	
-	@Test
-	public void ListaFornecedores() {
+	//@Test
+	//public void ListaFornecedores() {
 		
-		assertNull(fornecedorDao.getAll());
-	}
+	//	assertNull(fornecedorDao.getAll());
+	//}
 
 	
 

@@ -1,25 +1,23 @@
 package com.projetolab4.controller;
 
+import com.projetolab4.model.Endereco;
 import com.projetolab4.model.Fornecedor;
-import com.projetolab4.repository.FornecedorDao;
+import com.projetolab4.services.FornecedorService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class FornecedorController {
 
-    private final FornecedorDao repository;
+    private FornecedorService fornecedorService;
 
-    FornecedorController(FornecedorDao fornecedor) {
-        this.repository = fornecedor;
+    FornecedorController(FornecedorService fornecedor) {
+        this.fornecedorService = fornecedor;
     }
 
     @PostMapping("/fornecedor")
     Fornecedor newFornecedor(@RequestBody Fornecedor newFornecedor) {
-        return repository.save(newFornecedor);
-    }
+        Endereco end = newFornecedor.getEndereco();
 
-    @GetMapping("/fornecedor/{id}")
-    Fornecedor getFornecedor(@PathVariable Long id) {
-        return repository.findById(id);
+        return fornecedorService.save(newFornecedor, end);
     }
 }
