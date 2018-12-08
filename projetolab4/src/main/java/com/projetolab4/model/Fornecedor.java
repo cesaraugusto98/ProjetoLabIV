@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 @Data
 @Builder
@@ -15,13 +16,15 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "FOR_FORNECEDOR")
 public class Fornecedor {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="native")
+	@GenericGenerator(name = "native", strategy="native")
 	private Long forId;
 
-	@OneToOne
-	@JoinColumn(name = "END_ID", nullable = false)
-	private Endereco endId;
+	@JoinColumn(name = "END_ID")
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
+	private Endereco endereco;
 	
 	@Size(max = 16)
 	@Column(name="FOR_CNPJ", nullable = false)
