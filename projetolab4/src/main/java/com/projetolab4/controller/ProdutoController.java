@@ -13,9 +13,9 @@ import com.projetolab4.repository.ProdutoRepository;
 
 @RestController
 public class ProdutoController {
-	
- 	private ProdutoService service;
+
 	private ProdutoRepository repository;
+	private ProdutoService service;
 
 	ProdutoController(ProdutoRepository repository, ProdutoService service) {
 		this.repository = repository;
@@ -28,18 +28,18 @@ public class ProdutoController {
 		return service.saveProduto(produto);
 	}
 
-	@GetMapping("/produto/getById/{id}")
-	Produto getProdutoById(@PathVariable Long id) {
-		return repository.findById(id);
-	}
+	    @GetMapping("/produto/getById/{id}")
+	    Produto getProdutoById(@PathVariable Long id) {
+	        return repository.findById(id);
+	    }
 
-	@GetMapping("produto/deleteById/{id}")
-	Boolean deleteProdutoById(@PathVariable Long id) {
-		return repository.delete(id);
-	}
+	    @GetMapping("/produto/deleteById/{id}")
+	    Boolean deleteProdutoById(@PathVariable Long id) {
+	        return repository.delete(id);
+	    }
 
-	@PutMapping("produto/updateById/{id}")
-	Produto updateProdutoById(@RequestBody Produto produto, @PathVariable Long id) {
-		return repository.findById(id);
-	}
+	    @PutMapping("/produto/updateById/{id}")
+	    Produto updateProdutoById(@RequestBody Produto produto, @PathVariable Long id) {
+	        return repository.findById(id);
+	    }
 }
