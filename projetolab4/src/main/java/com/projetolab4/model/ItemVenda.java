@@ -19,12 +19,12 @@ public class ItemVenda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long itvId;
 
-    @ManyToOne
-    @JoinColumn(name = "PRO_ID", nullable = false)
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "PRO_ID")
     private Produto produto;
 
-    @ManyToOne
     @JoinColumn(name = "VEN_ID ", nullable = false)
+    @ManyToOne
     private Venda venda;
 
     @Column(name = "QTD_PRO")

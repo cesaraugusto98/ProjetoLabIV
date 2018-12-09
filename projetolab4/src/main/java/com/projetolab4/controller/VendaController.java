@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.projetolab4.model.Venda;
 import com.projetolab4.repository.VendaRepository;
 
-@RestController
+//@RestController
 public class VendaController {
 
-	private VendaRepository repository;
+	/*private VendaRepository repository;
 	private VendaService service;
 
     VendaController (VendaRepository repository, VendaService service) {
@@ -40,6 +40,6 @@ public class VendaController {
     @PutMapping("/venda/updateById/{id}")
     Venda updateVendaById(@RequestBody Venda venda, @PathVariable Long id) {
         return repository.findById(id);
-    }
+    }*/
 	
 }

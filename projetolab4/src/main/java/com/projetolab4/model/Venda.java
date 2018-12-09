@@ -27,9 +27,6 @@ public class Venda {
 	@JoinColumn(name = "CLI_ID", nullable = false)
 	private Cliente cliente;
 
-	@OneToMany(mappedBy = "venda", cascade = CascadeType.PERSIST)
-	private List<ItemVenda> itemVenda;
-
 	@OneToOne
 	@JoinColumn(name = "FPG_ID", nullable = false)
 	private FormaPagamento formaPagamento;
