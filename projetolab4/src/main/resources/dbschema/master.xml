@@ -104,7 +104,7 @@
     
     <changeSet id="13" author="usuario12">
         <comment>Insert movimento entrada</comment>
-        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoMET_MOVIMENTO_SAIDA.sql"
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoMES_MOVIMENTO_SAIDA.sql"
         splitStatements="true" stripComments="true"/>
     </changeSet>
 	

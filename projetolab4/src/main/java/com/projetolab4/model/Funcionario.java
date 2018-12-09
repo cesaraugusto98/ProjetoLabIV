@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.util.List;
 
@@ -17,8 +18,10 @@ import java.util.List;
 @Entity
 @Table(name = "FUN_FUNCIONARIO")
 public class Funcionario {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="native")
+	@GenericGenerator(name = "native", strategy="native")
 	private Long funId;
 	
 	@Size(max = 50)
@@ -36,10 +39,6 @@ public class Funcionario {
 	@Size(max = 12)
 	@Column(name="FUN_SENHA", nullable = false)
 	private String funSenha;
-
-	@OneToOne
-	@JoinColumn(name = "END_ID", nullable = false)
-	private Endereco endId;
 	
 	@Size(max = 12)
 	@Column(name="FUN_CONTATO", nullable = false)
@@ -52,6 +51,10 @@ public class Funcionario {
 	@Column(name="FUN_CARGO", nullable = false)
 	private String funCargo;
 
-	@OneToMany(mappedBy = "funId", fetch = FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "END_ID")
+	private Endereco endereco;
+
+	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY)
 	private List<Venda> vendas;
 }

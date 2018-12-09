@@ -1,6 +1,6 @@
 package com.projetolab4.services;
 
-public interface Service<ET, E> {
+public interface service<ET, E> {
 
     ET save(ET entity, E endereco);
 }

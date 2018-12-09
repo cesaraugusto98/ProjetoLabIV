@@ -7,7 +7,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
+
+import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Builder
@@ -15,16 +19,12 @@ import org.hibernate.annotations.GenericGenerator;
 @NoArgsConstructor
 @Entity
 @Table(name = "FOR_FORNECEDOR")
-public class Fornecedor {
+public class Fornecedor implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="native")
 	@GenericGenerator(name = "native", strategy="native")
 	private Long forId;
-
-	@JoinColumn(name = "END_ID")
-	@ManyToOne(optional = false, fetch = FetchType.EAGER)
-	private Endereco endereco;
 	
 	@Size(max = 16)
 	@Column(name="FOR_CNPJ", nullable = false)
@@ -37,4 +37,8 @@ public class Fornecedor {
 	@Size(max = 50)
 	@Column(name="FOR_NOME_FANTASIA", nullable = false)
 	private String forNomeFantasia;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "END_ID")
+	private Endereco endereco;
 }
