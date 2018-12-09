@@ -56,14 +56,21 @@ public class FuncionarioRepository implements JpaRepository<Funcionario, Long> {
     }
 
     @Override
-    public void update(Funcionario funcionario) {
+    public Boolean update(Funcionario funcionario) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         if (funcionario != null && funcionario.getFunId() != null) {
             em.merge(funcionario);
         }
-        em.getTransaction().commit();
-        em.close();
+        
+        
+        try {
+			em.getTransaction().commit();
+			em.close();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
     }
 
     @Override

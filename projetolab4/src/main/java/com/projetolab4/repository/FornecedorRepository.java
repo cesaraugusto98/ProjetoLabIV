@@ -56,14 +56,20 @@ public class FornecedorRepository implements JpaRepository<Fornecedor, Long> {
     }
 
     @Override
-    public void update(Fornecedor fornecedor) {
+    public Boolean update(Fornecedor fornecedor) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         if (fornecedor != null && fornecedor.getForId() != null) {
             em.merge(fornecedor);
         }
-        em.getTransaction().commit();
-        em.close();
+        
+        try {
+			em.getTransaction().commit();
+			em.close();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
     }
 
     @Override

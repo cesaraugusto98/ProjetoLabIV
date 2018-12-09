@@ -58,14 +58,21 @@ public class MovimentoSaidaRepository implements JpaRepository<MovimentoSaida, L
 	}
 
 	@Override
-	public void update(MovimentoSaida e) {
+	public Boolean update(MovimentoSaida e) {
 		EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         if (e != null && e.getMesId() != null) {
             em.merge(e);
         }
-        em.getTransaction().commit();
-        em.close();
+        
+        
+        try {
+			em.getTransaction().commit();
+			em.close();
+			return true;
+		} catch (Exception e2) {
+			return false;
+		}
 		
 	}
 

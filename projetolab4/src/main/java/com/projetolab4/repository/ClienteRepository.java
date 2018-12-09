@@ -57,14 +57,20 @@ public class ClienteRepository implements JpaRepository<Cliente, Long> {
 	}
 
 	@Override
-	public void update(Cliente e) {
+	public Boolean update(Cliente e) {
 		EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         if (e != null && e.getCliId() != null) {
             em.merge(e);
         }
-        em.getTransaction().commit();
-        em.close();
+        
+        try {
+			em.getTransaction().commit();
+			em.close();
+			return true;
+		} catch (Exception e2) {
+			return false;
+		}
 	}
 
 	@Override

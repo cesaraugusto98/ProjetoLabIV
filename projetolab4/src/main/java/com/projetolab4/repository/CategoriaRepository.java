@@ -59,15 +59,20 @@ public class CategoriaRepository implements JpaRepository<Categoria, Long> {
 	}
 
 	@Override
-	public void update(Categoria e) {
+	public Boolean update(Categoria e) {
 		EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         if (e != null && e.getCatId() != null) {
             em.merge(e);
         }
-        em.getTransaction().commit();
+        
+		try {
+			em.getTransaction().commit();
         em.close();
-		
+        return true;
+		} catch (Exception e2) {
+			return false;
+		}
 	}
 
 	@Override
