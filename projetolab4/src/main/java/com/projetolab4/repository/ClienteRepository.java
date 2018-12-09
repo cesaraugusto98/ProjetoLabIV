@@ -7,7 +7,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 
 import com.projetolab4.model.Cliente;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class ClienteRepository implements JpaRepository<Cliente, Long> {
 
     @PersistenceUnit

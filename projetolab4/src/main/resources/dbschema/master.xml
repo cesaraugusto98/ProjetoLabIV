@@ -20,7 +20,7 @@
 	<include file="src/main/resources/dbschema/scripts/scriptInsercaoFUN_FUNCIONARIO.sql" />
 	<include file="src/main/resources/dbschema/scripts/scriptInsercaoPRO_PRODUTO.sql" />
 	<include file="src/main/resources/dbschema/scripts/scriptInsercaoVEN_VENDA.sql" />
-	<include file="src/main/resources/dbschema/scripts/scriptInsercaoMET_MOVIMENTO_ENTRADA.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoMES_MOVIMENTO_ENTRADA.sql" />
 	<include file="src/main/resources/dbschema/scripts/scriptInsercaoMET_MOVIMENTO_SAIDA.sql" />-->
 
     <changeSet id="2" author="usuario1">
@@ -96,16 +96,16 @@
         splitStatements="true" stripComments="true"/>
     </changeSet>
     
-    <changeSet id="12" author="usuario11">
+    <!--<changeSet id="12" author="usuario11">
         <comment>Insert movimento entrada</comment>
-        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoMET_MOVIMENTO_ENTRADA.sql"
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoMES_MOVIMENTO_ENTRADA.sql"
         splitStatements="true" stripComments="true"/>
     </changeSet>
     
     <changeSet id="13" author="usuario12">
         <comment>Insert movimento entrada</comment>
-        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoMES_MOVIMENTO_SAIDA.sql"
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoMET_MOVIMENTO_SAIDA.sql"
         splitStatements="true" stripComments="true"/>
-    </changeSet>
+    </changeSet>-->
 	
 </databaseChangeLog>

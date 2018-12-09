@@ -20,7 +20,7 @@ public class MovimentoEntradaRepository implements JpaRepository<MovimentoEntrad
 	public MovimentoEntrada save(MovimentoEntrada e) {
 		EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        if (e != null && e.getForId() == null) {
+        if (e != null && e.getMetId() == null) {
             em.persist(e);
             em.getTransaction().commit();
             em.close();
@@ -61,7 +61,7 @@ public class MovimentoEntradaRepository implements JpaRepository<MovimentoEntrad
 	public void update(MovimentoEntrada e) {
 		EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        if (e != null && e.getForId() != null) {
+        if (e != null && e.getMetId() != null) {
             em.merge(e);
         }
         em.getTransaction().commit();

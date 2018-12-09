@@ -44,4 +44,10 @@ public class Produto {
 	@JoinColumn(name = "EST_ID", nullable = false)
 	private Estoque estoque;
 
+	@Transient
+	private Integer metQtd;
+
+	@Transient
+	private String metDescricao;
+
 }

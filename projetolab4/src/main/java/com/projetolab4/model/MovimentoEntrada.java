@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "MES_MOVIMENTO_ENTRADA")
+@Table(name = "MET_MOVIMENTO_ENTRADA")
 public class MovimentoEntrada {
 
     @Id
@@ -24,19 +24,19 @@ public class MovimentoEntrada {
 
     @ManyToOne
     @JoinColumn(name = "FOR_ID", nullable = false)
-    private Fornecedor forId;
+    private Fornecedor fornecedor;
 
     @ManyToOne
     @JoinColumn(name = "PRO_ID", nullable = false)
-    private Produto prodId;
+    private Produto produto;
 
-    @Column(name = "MES_QTD")
-    private Long metQtd;
+    @Column(name = "MET_QTD")
+    private Integer metQtd;
 
-    @Column(name = "MES_DATA")
+    @Column(name = "MET_DATA")
     private LocalDateTime metData;
 
-    @Column(name = "MES_DESCRICAO")
+    @Column(name = "MET_DESCRICAO")
     @Size(max = 30)
     private String metDescricao;
 }
