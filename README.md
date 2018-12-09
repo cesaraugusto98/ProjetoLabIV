@@ -9,6 +9,21 @@ Kevin Mikio @kevin799
 Lucas Domingos @lucasdlg5
 Carlos Eduardo dos Santos @EduCarlos0311
 
+# Configurações inicials da base de dados
+
+Schema: lab04db
+username: lab04
+senha: lab04
+
+# Execução Inicial do Projeto utilizando terminal
+
+1 - git clone https://github.com/cesaraugusto98/ProjetoLabIV.git
+2 - git checkout release01
+3 - cd projetolab4
+4 - mvn clean install
+5 - mvn liquibase:update
+6 - mvn spring-boot:run
+
 # Comandos Git
 git clone https://github.com/cesaraugusto98/ProjetoLabIV.git
 
