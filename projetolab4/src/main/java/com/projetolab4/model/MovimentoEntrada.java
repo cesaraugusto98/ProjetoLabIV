@@ -1,0 +1,42 @@
+package com.projetolab4.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "MET_MOVIMENTO_ENTRADA")
+public class MovimentoEntrada {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "MET_ID", nullable = false)
+    private Long metId;
+
+    @ManyToOne
+    @JoinColumn(name = "FOR_ID", nullable = false)
+    private Fornecedor fornecedor;
+
+    @ManyToOne
+    @JoinColumn(name = "PRO_ID", nullable = false)
+    private Produto produto;
+
+    @Column(name = "MET_QTD")
+    private Integer metQtd;
+
+    @Column(name = "MET_DATA")
+    private LocalDateTime metData;
+
+    @Column(name = "MET_DESCRICAO")
+    @Size(max = 30)
+    private String metDescricao;
+}

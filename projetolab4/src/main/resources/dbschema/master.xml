@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+	<preConditions>
+		<dbms type="mysql" />
+	</preConditions>
+	<!--<include file="src/main/resources/dbschema/scripts/scriptInitialSQL.sql"/>-->
+	<!--<include file="src/main/resources/dbschema/scripts/scriptCriacaoTabelas.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoCAT_CATEGORIA.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoCLI_CLIENTE.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoEND_ENDERECO.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoEST_ESTOQUE.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoFOR_FORNECEDOR.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoFPG_FORMA_PAGAMENTO.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoFUN_FUNCIONARIO.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoPRO_PRODUTO.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoVEN_VENDA.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoMES_MOVIMENTO_ENTRADA.sql" />
+	<include file="src/main/resources/dbschema/scripts/scriptInsercaoMET_MOVIMENTO_SAIDA.sql" />-->
+
+    <changeSet id="2" author="usuario1">
+        <comment>Criacao das tabela </comment>
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptCriacaoTabelas.sql"
+                 splitStatements="true" stripComments="true"/>
+        <rollback>
+            <dropTable tableName="END_ENDERECO"/>
+            <dropTable tableName="CLI_CLIENTE"/>
+            <dropTable tableName="CAT_CATEGORIA"/>
+            <dropTable tableName="PRO_PRODUTO"/>
+            <dropTable tableName="EST_ESTOQUE"/>
+            <dropTable tableName="FOR_FORNECEDOR"/>
+            <dropTable tableName="CRN_CARRINHO"/>
+            <dropTable tableName="FPG_FORMA_PAGAMENTO"/>
+            <dropTable tableName="VEN_VENDA"/>
+            <dropTable tableName="FUN_FUNCIONARIO"/>
+            <dropTable tableName="ITV_ITEM_VENDA"/>
+        </rollback>
+    </changeSet>
+    
+    <changeSet id="3" author="usuario2">
+        <comment>Insert categoria</comment>
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoCAT_CATEGORIA.sql"
+        splitStatements="true" stripComments="true"/>
+    </changeSet>
+    
+    <changeSet id="4" author="usuario3">
+        <comment>Insert cliente</comment>
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoCLI_CLIENTE.sql"
+        splitStatements="true" stripComments="true"/>
+    </changeSet>
+    
+    <changeSet id="5" author="usuario4">
+        <comment>Insert endereco</comment>
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoEND_ENDERECO.sql"
+        splitStatements="true" stripComments="true"/>
+    </changeSet>
+
+	<changeSet id="6" author="usuario5">
+        <comment>Insert estoque</comment>
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoEST_ESTOQUE.sql"
+        splitStatements="true" stripComments="true"/>
+    </changeSet>
+    
+    <changeSet id="7" author="usuario6">
+        <comment>Insert fornecedor</comment>
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoFOR_FORNECEDOR.sql"
+        splitStatements="true" stripComments="true"/>
+    </changeSet>
+    
+    <changeSet id="8" author="usuario7">
+        <comment>Insert forma pagamento</comment>
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoFPG_FORMA_PAGAMENTO.sql"
+        splitStatements="true" stripComments="true"/>
+    </changeSet>
+    
+    <changeSet id="9" author="usuario8">
+        <comment>Insert funcionario</comment>
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoFUN_FUNCIONARIO.sql"
+        splitStatements="true" stripComments="true"/>
+    </changeSet>
+    
+    <changeSet id="10" author="usuario9">
+        <comment>Insert produto</comment>
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoPRO_PRODUTO.sql"
+        splitStatements="true" stripComments="true"/>
+    </changeSet>
+    
+    <changeSet id="11" author="usuario10">
+        <comment>Insert venda</comment>
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoVEN_VENDA.sql"
+        splitStatements="true" stripComments="true"/>
+    </changeSet>
+    
+    <!--<changeSet id="12" author="usuario11">
+        <comment>Insert movimento entrada</comment>
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoMES_MOVIMENTO_ENTRADA.sql"
+        splitStatements="true" stripComments="true"/>
+    </changeSet>
+    
+    <changeSet id="13" author="usuario12">
+        <comment>Insert movimento entrada</comment>
+        <sqlFile path="src/main/resources/dbschema/scripts/scriptInsercaoMET_MOVIMENTO_SAIDA.sql"
+        splitStatements="true" stripComments="true"/>
+    </changeSet>-->
+	
+</databaseChangeLog>
