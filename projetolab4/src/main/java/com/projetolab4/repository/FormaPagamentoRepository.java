@@ -36,8 +36,8 @@ public class FormaPagamentoRepository implements JpaRepository<FormaPagamento, L
     }
 
     @Override
-    public void update(FormaPagamento formaPagamento) {
-
+    public Boolean update(FormaPagamento formaPagamento) {
+        return true;
     }
 
     @Override

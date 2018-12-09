@@ -1,14 +1,11 @@
 package com.projetolab4.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import com.projetolab4.model.ItemVenda;
 import com.projetolab4.repository.ItemVendaRepository;
 
+@RestController
 public class ItemVendaController {
 	
 	private ItemVendaRepository repository;

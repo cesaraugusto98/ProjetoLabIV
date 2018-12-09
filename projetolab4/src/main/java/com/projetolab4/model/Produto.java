@@ -9,9 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Cascade;
 
-import java.util.Collection;
-import java.util.LinkedHashSet;
-import java.util.List;
+import java.util.*;
 
 @Data
 @AllArgsConstructor
@@ -19,6 +17,7 @@ import java.util.List;
 @Entity
 @Table(name = "PRO_PRODUTO")
 public class Produto {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long proId;
@@ -47,5 +46,4 @@ public class Produto {
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "produto")
 	private Collection<MovimentoEntrada> movimentoEntrada = new LinkedHashSet<>();
-
 }

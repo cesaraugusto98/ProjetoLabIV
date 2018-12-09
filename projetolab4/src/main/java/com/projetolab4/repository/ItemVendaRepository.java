@@ -4,11 +4,15 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 
 import com.projetolab4.model.ItemVenda;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class ItemVendaRepository implements JpaRepository<ItemVenda, Long> {
 
+    @PersistenceUnit
 	private EntityManagerFactory emf;
 	
 	@Override
