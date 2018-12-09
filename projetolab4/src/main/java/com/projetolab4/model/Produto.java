@@ -9,6 +9,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Cascade;
 
+import java.util.Collection;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 @Data
@@ -44,10 +46,7 @@ public class Produto {
 	@JoinColumn(name = "EST_ID", nullable = false)
 	private Estoque estoque;
 
-	@Transient
-	private Integer metQtd;
-
-	@Transient
-	private String metDescricao;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "produto")
+	private Collection<MovimentoEntrada> movimentoEntrada = new LinkedHashSet<>();
 
 }

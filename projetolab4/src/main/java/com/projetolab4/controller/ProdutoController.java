@@ -19,7 +19,9 @@ public class ProdutoController {
 
 	@PostMapping("/produto/add")
 	void addProduto(@RequestBody Produto produto) {
-		service.saveProduto(produto, produto.getMetQtd(), produto.getMetDescricao());
+		service.saveProduto(produto,
+				produto.getMovimentoEntrada().stream().findFirst().get().getMetQtd(),
+				produto.getMovimentoEntrada().stream().findFirst().get().getMetDescricao());
 	}
 
 	@GetMapping("/produto/getById/{id}")
