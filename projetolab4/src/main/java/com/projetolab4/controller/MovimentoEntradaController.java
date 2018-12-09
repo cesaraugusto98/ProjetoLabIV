@@ -33,7 +33,7 @@ public class MovimentoEntradaController {
 	    }
 
 	    @PutMapping("movimentoentrada/updateById/{id}")
-	    MovimentoEntrada updateMovimentoEntradaById(@RequestBody MovimentoEntrada fornecedor, @PathVariable Long id) {
+	    MovimentoEntrada updateMovimentoEntradaById(@RequestBody MovimentoEntrada movEntrada, @PathVariable Long id) {
 	        return repository.findById(id);
 	    }
 }
