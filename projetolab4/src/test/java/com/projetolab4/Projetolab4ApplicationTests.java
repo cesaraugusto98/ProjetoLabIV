@@ -238,58 +238,58 @@ public class Projetolab4ApplicationTests {
 		assertEquals(true, ven_repository.update(venda_Obj));
 	}
 	
-//	@Test
-//	public void FindById_Categoria() {
-//		assertEquals(categoria_Obj, rep_reposiroty.findById());
-//	}
-//	
-//	@Test
-//	public void FindById_Cliente() {
-//		assertEquals(cliente_Obj, cli_repository.findById());
-//	}
-//	
-//	@Test
-//	public void FindById_Endereco() {
-//		assertEquals(endereco_Obj, end_repository.findById());
-//	}
-//	
-//	@Test
-//	public void FindById_Estoque() {
-//		assertEquals(estoque_Obj, est_repository.findById());
-//	}
-//	
-//	@Test
-//	public void FindById_Fornecedor() {
-//		assertEquals(fornecedor_Obj, for_repository.findById());
-//	}
-//	
-//	@Test
-//	public void FindById_Funcionario() {
-//		assertEquals(funcionario_Obj, fun_repository.findById());
-//	}
-//	
-//	public void FindById_ItemVenda() {
-//		assertEquals(itemvenda_Obj, itv_repository.findById());
-//	}
-//	
-//	@Test
-//	public void FindById_MovimentoEntrada() {
-//		assertEquals(movimentoEntrada_Obj, mve_repository.findById());
-//	}
-//	
-//	@Test
-//	public void FindById_MovimentoSaida() {
-//		assertEquals(movimentoSaida_Obj, mvs_repository.findById());
-//	}
-//	
-//	@Test
-//	public void FindById_Produto() {
-//		assertEquals(produto_Obj, pro_repository.findById());
-//	}
-//	
-//	@Test
-//	public void FindById_Venda() {
-//		assertEquals(venda_Obj, ven_repository.findById());
-//	}
+	@Test
+	public void FindById_Categoria() {
+		assertEquals(categoria_Obj, rep_reposiroty.findById(1L));
+	}
+	
+	@Test
+	public void FindById_Cliente() {
+		assertEquals(cliente_Obj, cli_repository.findById(1L));
+	}
+	
+	@Test
+	public void FindById_Endereco() {
+		assertEquals(endereco_Obj, end_repository.findById(1L));
+	}
+	
+	@Test
+	public void FindById_Estoque() {
+		assertEquals(estoque_Obj, est_repository.findById(1L));
+	}
+	
+	@Test
+	public void FindById_Fornecedor() {
+		assertEquals(fornecedor_Obj, for_repository.findById(1L));
+	}
+	
+	@Test
+	public void FindById_Funcionario() {
+		assertEquals(funcionario_Obj, fun_repository.findById(1L));
+	}
+	
+	public void FindById_ItemVenda() {
+		assertEquals(itemvenda_Obj, itv_repository.findById(1L));
+	}
+	
+	@Test
+	public void FindById_MovimentoEntrada() {
+		assertEquals(movimentoEntrada_Obj, mve_repository.findById(1L));
+	}
+	
+	@Test
+	public void FindById_MovimentoSaida() {
+		assertEquals(movimentoSaida_Obj, mvs_repository.findById(1L));
+	}
+	
+	@Test
+	public void FindById_Produto() {
+		assertEquals(produto_Obj, pro_repository.findById(1L));
+	}
+	
+	@Test
+	public void FindById_Venda() {
+		assertEquals(venda_Obj, ven_repository.findById(1L));
+	}
 	
 }
