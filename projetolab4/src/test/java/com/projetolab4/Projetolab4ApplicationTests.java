@@ -73,21 +73,8 @@ public class Projetolab4ApplicationTests {
 	Funcionario funcionario_Obj = new Funcionario(null,"NomeTesteFuncionario", "111CPF", "222LoginTeste", "333SenhaTeste","ContatoFuncionarioTeste",2000D,"GerenteTeste",endereco_Obj);
 
 	@Autowired
-	VendaRepository ven_repository;
-	Venda venda_Obj = new Venda(null, cliente_Obj , new FormaPagamento(),funcionario_Obj, LocalDateTime.of(1, 1, 1, 1, 1));
-
-	@Autowired
-	ItemVendaRepository itv_repository;
-	ItemVenda itemvenda_Obj = new ItemVenda(null,  produto_Obj, venda_Obj, 10 );
-
-	@Autowired
 	MovimentoEntradaRepository mve_repository;
 	MovimentoEntrada movimentoEntrada_Obj = new MovimentoEntrada(null, fornecedor_Obj, produto_Obj, 10, LocalDateTime.of(1, 1, 1, 1, 1), "TesteDescricao");
-
-	@Autowired
-	MovimentoSaidaRepository mvs_repository;
-	MovimentoSaida movimentoSaida_Obj = new MovimentoSaida(null, venda_Obj, LocalDateTime.of(1, 1, 1, 1, 1), "TesteDescricaoEntrada");
-
 
 	@Test
 	public void testCategoria() {
@@ -125,18 +112,8 @@ public class Projetolab4ApplicationTests {
 	}
 	
 	@Test
-	public void Save_ItemVenda() {
-		assertEquals(itemvenda_Obj, itv_repository.save(itemvenda_Obj));
-	}
-	
-	@Test
 	public void Save_MovimentoEntrada() {
 		assertEquals(movimentoEntrada_Obj, mve_repository.save(movimentoEntrada_Obj));
-	}
-	
-	@Test
-	public void Save_MovimentoSaida() {
-		assertEquals(movimentoSaida_Obj, mvs_repository.save(movimentoSaida_Obj));
 	}
 	
 	@Test
@@ -145,63 +122,43 @@ public class Projetolab4ApplicationTests {
 	}
 	
 	@Test
-	public void Save_Venda() {
-		assertEquals(venda_Obj, ven_repository.save(venda_Obj));
-	}
-	
-	@Test
 	public void Delete_Categoria() {
-		assertEquals(true, rep_reposiroty.delete(categoria_Obj.getCatId()));
+		assertEquals(true, rep_reposiroty.delete(1L));
 	}
 	
 	@Test
 	public void Delete_Cliente() {
-		assertEquals(true, cli_repository.delete(cliente_Obj.getCliId()));
+		assertEquals(true, cli_repository.delete(1L));
 	}
 	
 	@Test
 	public void Delete_Endereco() {
-		assertEquals(true, end_repository.delete(endereco_Obj.getEndId()));
+		assertEquals(true, end_repository.delete(1L));
 	}
 	
 	@Test
 	public void Delete_Estoque() {
-		assertEquals(true, est_repository.delete(estoque_Obj.getEstId()));
+		assertEquals(true, est_repository.delete(1L));
 	}
 	
 	@Test
 	public void Delete_Fornecedor() {
-		assertEquals(true, for_repository.delete(fornecedor_Obj.getForId()));
+		assertEquals(true, for_repository.delete(1L));
 	}
 	
 	@Test
 	public void Delete_Funcionario() {
-		assertEquals(true, fun_repository.delete(funcionario_Obj.getFunId()));
-	}
-	
-	@Test
-	public void Delete_ItemVenda() {
-		assertEquals(true, itv_repository.delete(itemvenda_Obj.getItvId()));
+		assertEquals(true, fun_repository.delete(1L));
 	}
 	
 	@Test
 	public void Delete_MovimentoEntrada() {
-		assertEquals(true, mve_repository.delete(movimentoEntrada_Obj.getMetId()));
-	}
-	
-	@Test
-	public void Delete_MovimentoSaida() {
-		assertEquals(true, mvs_repository.delete(movimentoSaida_Obj.getMesId()));
+		assertEquals(true, mve_repository.delete(1L));
 	}
 	
 	@Test
 	public void Delete_Produto() {
-		assertEquals(true, pro_repository.delete(produto_Obj.getProId()));
-	}
-	
-	@Test
-	public void Delete_Venda() {
-		assertEquals(true, ven_repository.delete(venda_Obj.getVenId()));
+		assertEquals(true, pro_repository.delete(1L));
 	}
 	
 	@Test
@@ -235,28 +192,13 @@ public class Projetolab4ApplicationTests {
 	}
 	
 	@Test
-	public void Update_ItemVenda() {
-		assertEquals(true, itv_repository.update(itemvenda_Obj));
-	}
-	
-	@Test
 	public void Update_MovimentoEntrada() {
 		assertEquals(true, mve_repository.update(movimentoEntrada_Obj));
 	}
 	
 	@Test
-	public void Update_MovimentoSaida() {
-		assertEquals(true, mvs_repository.update(movimentoSaida_Obj));
-	}
-	
-	@Test
 	public void Update_Produto() {
 		assertEquals(true, pro_repository.update(produto_Obj));
-	}
-	
-	@Test
-	public void Update_Venda() {
-		assertEquals(true, ven_repository.update(venda_Obj));
 	}
 	
 	@Test
@@ -289,28 +231,14 @@ public class Projetolab4ApplicationTests {
 		assertEquals(funcionario_Obj, fun_repository.findById(1L));
 	}
 	
-	public void FindById_ItemVenda() {
-		assertEquals(itemvenda_Obj, itv_repository.findById(1L));
-	}
-	
 	@Test
 	public void FindById_MovimentoEntrada() {
 		assertEquals(movimentoEntrada_Obj, mve_repository.findById(1L));
 	}
 	
 	@Test
-	public void FindById_MovimentoSaida() {
-		assertEquals(movimentoSaida_Obj, mvs_repository.findById(1L));
-	}
-	
-	@Test
 	public void FindById_Produto() {
 		assertEquals(produto_Obj, pro_repository.findById(1L));
-	}
-	
-	@Test
-	public void FindById_Venda() {
-		assertEquals(venda_Obj, ven_repository.findById(1L));
 	}
 	
 }
