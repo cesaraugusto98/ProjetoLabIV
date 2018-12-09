@@ -53,14 +53,21 @@ public class ItemVendaRepository implements JpaRepository<ItemVenda, Long> {
 	}
 
 	@Override
-	public void update(ItemVenda e) {
+	public Boolean update(ItemVenda e) {
 		EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         if (e != null && e.getItvId() != null) {
             em.merge(e);
         }
-        em.getTransaction().commit();
-        em.close();
+        
+        
+        try {
+			em.getTransaction().commit();
+			em.close();
+			return true;
+		} catch (Exception e2) {
+			return false;
+		}
 		
 	}
 

@@ -59,14 +59,21 @@ public class ProdutoRepository implements JpaRepository<Produto, Long> {
 	}
 
 	@Override
-	public void update(Produto e) {
+	public Boolean update(Produto e) {
 		EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         if (e != null && e.getProId() != null) {
             em.merge(e);
         }
-        em.getTransaction().commit();
-        em.close();
+        
+        
+        try {
+			em.getTransaction().commit();
+			em.close();
+			return true;
+		} catch (Exception e2) {
+			return false;
+		}
 		
 	}
 

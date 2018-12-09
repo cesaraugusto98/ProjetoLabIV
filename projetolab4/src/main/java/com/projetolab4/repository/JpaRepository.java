@@ -9,7 +9,7 @@ public interface JpaRepository<E, L> {
 	
 	Boolean delete(L id);
 	
-	void update(E e);
+	Boolean update(E e);
 	
 	List<E> getAll();
 }

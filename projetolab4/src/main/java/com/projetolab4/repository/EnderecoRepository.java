@@ -10,11 +10,10 @@ import java.util.List;
 @org.springframework.stereotype.Repository
 public class EnderecoRepository {
 // implements JpaRepository<Endereco, Long>
-    /*
+    
     @PersistenceUnit
     private EntityManagerFactory emf;
 
-    @Override
     public <S extends Endereco> S save(S s) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -28,7 +27,6 @@ public class EnderecoRepository {
         return null;
     }
 
-    @Override
     public Endereco findById(Long aLong) {
         EntityManager em = emf.createEntityManager();
         Endereco entity = em.find(Endereco.class, aLong);
@@ -37,20 +35,18 @@ public class EnderecoRepository {
         return entity;
     }
 
-    @Override
     public Boolean delete(Long id) {
         return true;
     }
 
-    @Override
-    public void update(Endereco entity) {
-        return 0L;
+    public Endereco update(Endereco entity) {
+    	
+        return entity;
     }
 
-    @Override
     public List<Endereco> getAll() {
         return null;
     }
 
-*/
+
 }
