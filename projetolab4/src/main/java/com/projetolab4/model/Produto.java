@@ -32,16 +32,16 @@ public class Produto {
 	@Column(name = "PRO_CUSTO", nullable = false)
 	private Double proCusto;
 
-	@OneToOne
-	@JoinColumn(name = "FOR_ID", nullable = false)
-	private Fornecedor forId;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "FOR_ID")
+	private Fornecedor fornecedor;
 
 	@ManyToOne /* Muitos produtos por categoria */
 	@JoinColumn(name = "CAT_ID", nullable = false)
-	private Categoria catId;
+	private Categoria categoria;
 
 	@ManyToOne /* Muitos produtos pra um estoque */
 	@JoinColumn(name = "EST_ID", nullable = false)
-	private Estoque estId;
+	private Estoque estoque;
 
 }

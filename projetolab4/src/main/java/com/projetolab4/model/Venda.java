@@ -34,9 +34,8 @@ public class Venda {
 	@JoinColumn(name = "FPG_ID", nullable = false)
 	private FormaPagamento fpgId;
 
-	@ManyToOne /* Muitas vendas por funcionario */
-	@JoinColumn(name = "FUN_ID", nullable = false)
-	private Funcionario funId;
+	@ManyToOne(cascade = CascadeType.PERSIST) /* Muitas vendas por funcionario */
+	private Funcionario funcionario;
 
 	@Column(name = "VEN_DATA")
 	private LocalDateTime venData;

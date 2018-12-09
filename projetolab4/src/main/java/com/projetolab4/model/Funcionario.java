@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.util.Collection;
 import java.util.List;
 
 @Data
@@ -55,6 +56,6 @@ public class Funcionario {
 	@JoinColumn(name = "END_ID")
 	private Endereco endereco;
 
-	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY)
-	private List<Venda> vendas;
+	//@OneToMany(mappedBy = "funcionario")
+	//private List<Venda> vendas;
 }

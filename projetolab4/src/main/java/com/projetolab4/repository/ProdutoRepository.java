@@ -14,14 +14,14 @@ import com.projetolab4.model.Produto;
 @Repository
 public class ProdutoRepository implements JpaRepository<Produto, Long> {
 
-	 @PersistenceUnit
-	    private EntityManagerFactory emf;
+    @PersistenceUnit
+    private EntityManagerFactory emf;
 
 	@Override
 	public Produto save(Produto e) {
 		EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        if (e != null && e.getForId() == null) {
+        if (e != null && e.getProId() == null) {
             em.persist(e);
             em.getTransaction().commit();
             em.close();
@@ -62,7 +62,7 @@ public class ProdutoRepository implements JpaRepository<Produto, Long> {
 	public void update(Produto e) {
 		EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        if (e != null && e.getForId() != null) {
+        if (e != null && e.getProId() != null) {
             em.merge(e);
         }
         em.getTransaction().commit();
