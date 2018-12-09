@@ -1,4 +1,4 @@
-package com.projetolab4.services;
+package com.projetolab4.service;
 
 import com.projetolab4.model.*;
 import com.projetolab4.repository.*;

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 //import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.projetolab4.repository.CategoriaRepository;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -11,6 +12,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class Projetolab4ApplicationTests {
+
+    CategoriaRepository categoriaRepository;
+
+    Projetolab4ApplicationTests(CategoriaRepository categoriaRepository) {
+        this.categoriaRepository = categoriaRepository;
+    }
 	
 	
 	//FornecedorDao fornecedorDao;

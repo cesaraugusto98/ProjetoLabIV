@@ -1,6 +1,6 @@
 package com.projetolab4.controller;
 
-import com.projetolab4.services.ProdutoService;
+import com.projetolab4.service.ProdutoService;
 import org.springframework.web.bind.annotation.*;
 
 import com.projetolab4.model.Produto;

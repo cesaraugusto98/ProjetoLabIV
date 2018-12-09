@@ -1,5 +1,6 @@
 package com.projetolab4.controller;
 
+import com.projetolab4.service.VendaService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,14 +15,16 @@ import com.projetolab4.repository.VendaRepository;
 public class VendaController {
 
 	private VendaRepository repository;
+	private VendaService service;
 
-    VendaController (VendaRepository repository) {
+    VendaController (VendaRepository repository, VendaService service) {
         this.repository = repository;
+        this.service = service;
     }
 
     @PostMapping("/venda/add")
-    Venda addFornecedor(@RequestBody Venda venda) {
-        return repository.save(venda);
+    void addFornecedor(@RequestBody Venda venda) {
+        service.addVenda(venda);
     }
 
     @GetMapping("/venda/getById/{id}")

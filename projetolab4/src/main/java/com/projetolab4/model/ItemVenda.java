@@ -21,11 +21,11 @@ public class ItemVenda {
 
     @ManyToOne
     @JoinColumn(name = "PRO_ID", nullable = false)
-    private Produto proId;
+    private Produto produto;
 
     @ManyToOne
     @JoinColumn(name = "VEN_ID ", nullable = false)
-    private Venda venId;
+    private Venda venda;
 
     @Column(name = "QTD_PRO")
     private Integer qtdPro;

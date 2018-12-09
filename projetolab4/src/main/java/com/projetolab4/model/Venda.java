@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -24,17 +25,16 @@ public class Venda {
 
 	@ManyToOne
 	@JoinColumn(name = "CLI_ID", nullable = false)
-	private Cliente cliId;
+	private Cliente cliente;
 
-	@OneToOne
-	@JoinColumn(name = "PRO_ID", nullable = false)
-	private Produto proId;
+	@OneToMany(mappedBy = "venda", cascade = CascadeType.PERSIST)
+	private List<ItemVenda> itemVenda;
 
 	@OneToOne
 	@JoinColumn(name = "FPG_ID", nullable = false)
-	private FormaPagamento fpgId;
+	private FormaPagamento formaPagamento;
 
-	@ManyToOne(cascade = CascadeType.PERSIST) /* Muitas vendas por funcionario */
+	@ManyToOne /* Muitas vendas por funcionario */
 	private Funcionario funcionario;
 
 	@Column(name = "VEN_DATA")

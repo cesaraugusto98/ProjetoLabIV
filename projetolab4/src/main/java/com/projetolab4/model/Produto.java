@@ -14,7 +14,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity

@@ -30,7 +30,7 @@ public class Cliente {
 	@Size(max = 12)
 	@Column(name="CLI_CONTATO", nullable = false)
 	private String cliContato;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "END_ID")
 	private Endereco endereco;

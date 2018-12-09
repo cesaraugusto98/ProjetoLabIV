@@ -20,6 +20,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "FPG_FORMA_PAGAMENTO")
 public class FormaPagamento {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long fpgId;
