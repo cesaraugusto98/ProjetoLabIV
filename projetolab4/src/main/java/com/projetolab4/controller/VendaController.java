@@ -29,12 +29,12 @@ public class VendaController {
         return repository.findById(id);
     }
 
-    @GetMapping("venda/deleteById/{id}")
+    @GetMapping("/venda/deleteById/{id}")
     Boolean deleteVendaById(@PathVariable Long id) {
         return repository.delete(id);
     }
 
-    @PutMapping("venda/updateById/{id}")
+    @PutMapping("/venda/updateById/{id}")
     Venda updateVendaById(@RequestBody Venda venda, @PathVariable Long id) {
         return repository.findById(id);
     }

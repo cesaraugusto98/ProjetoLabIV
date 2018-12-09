@@ -23,12 +23,12 @@ public class FornecedorController {
         return repository.findById(id);
     }
 
-    @GetMapping("fornecedor/deleteById/{id}")
+    @GetMapping("/fornecedor/deleteById/{id}")
     Boolean deleteFornecedorById(@PathVariable Long id) {
         return repository.delete(id);
     }
 
-    @PutMapping("fornecedor/updateById/{id}")
+    @PutMapping("/fornecedor/updateById/{id}")
     Fornecedor updateFornecedorById(@RequestBody Fornecedor fornecedor, @PathVariable Long id) {
         return repository.findById(id);
     }

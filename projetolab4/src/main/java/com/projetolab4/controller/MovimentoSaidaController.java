@@ -29,12 +29,12 @@ public class MovimentoSaidaController {
 	        return repository.findById(id);
 	    }
 
-	    @GetMapping("movimentosaida/deleteById/{id}")
+	    @GetMapping("/movimentosaida/deleteById/{id}")
 	    Boolean deleteMovimentoSaidaById(@PathVariable Long id) {
 	        return repository.delete(id);
 	    }
 
-	    @PutMapping("movimentosaida/updateById/{id}")
+	    @PutMapping("/movimentosaida/updateById/{id}")
 	    MovimentoSaida updateMovimentoSaidaById(@RequestBody MovimentoSaida mvSaida, @PathVariable Long id) {
 	        return repository.findById(id);
 	    }

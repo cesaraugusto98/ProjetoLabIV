@@ -29,12 +29,12 @@ public class ProdutoController {
 	        return repository.findById(id);
 	    }
 
-	    @GetMapping("produto/deleteById/{id}")
+	    @GetMapping("/produto/deleteById/{id}")
 	    Boolean deleteProdutoById(@PathVariable Long id) {
 	        return repository.delete(id);
 	    }
 
-	    @PutMapping("produto/updateById/{id}")
+	    @PutMapping("/produto/updateById/{id}")
 	    Produto updateProdutoById(@RequestBody Produto produto, @PathVariable Long id) {
 	        return repository.findById(id);
 	    }
